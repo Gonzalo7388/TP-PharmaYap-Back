@@ -1,6 +1,17 @@
 // controllers/usuario.controller.js
 import Usuario from '../models/Usuario.js';
 
+export const obtenerUsuariosPorRol = async (req, res) => {
+  const { rol } = req.params; // obtenemos el rol desde los parámetros de la URL
+  try {
+    const usuarios = await Usuario.find({ rol }); // Filtramos por rol
+    res.json(usuarios);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
 export const crearUsuario = async (req, res) => {
   try {
     const nuevoUsuario = new Usuario(req.body);

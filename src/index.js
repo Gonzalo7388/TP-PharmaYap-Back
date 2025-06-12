@@ -58,6 +58,14 @@ app.use('/api/inventarios', inventarioRoutes);
 import reclamoRoutes from '../routes/reclamo.routes.js';
 app.use('/api/reclamos', reclamoRoutes);
 
+import principioActivo from '../routes/principioActivo.routes.js';
+app.use('/api/principioActivos', principioActivo);
+
+import ventaRoutes from '../routes/venta.routes.js';
+app.use('/api/ventas', ventaRoutes);
+
+import clienteRoutes from '../routes/cliente.routes.js';
+app.use('/api/clientes', clienteRoutes);
 
 
 // MongoDB Connection
